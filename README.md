@@ -1,6 +1,7 @@
 # Transmission-Statusboard
 A simple Statusboard Panel for Transmission
 
+![Alt text](http://i.imgur.com/MqONwor.png "Demo")
 ### Installation
 
 1. Place ` vendor ` and ` transmission.php ` in your web root.
