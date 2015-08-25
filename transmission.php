@@ -22,6 +22,19 @@ $port = 2626;
 .progress {
 	width: 150px;
 }
+@font-face {
+  font-family: 'StatusBoardFontLight';
+  src: url('fonts/UniversLTStd-LightCn.woff') format('woff');
+}
+
+.no-torrents{
+       text-align: center;
+   font-family: 'StatusBoardFontLight', 'StatusBoardFont';
+   min-height: 45px;
+   font-size: .8em;
+   color: rgb(100, 100, 100);
+   line-height: 150%;
+}
 
 .team {
 	width: auto;
@@ -504,6 +517,10 @@ foreach ($torrents as $torrent) {
 
 	<?php
 	foreach($torrentList as $torrentId){
+  if(count($torrentList) == 0){
+    	echo '<tr><td></td></tr><tr><td></td></tr><tr><td><h3 class = "no-torrents">No Torrents</h3></td></tr>';
+	}
+	foreach($torrentList as $torrentId){
     $torrent = $transmission->get($torrentId);
     $green = '#72f455';
     $blue = '#33a0af';
@@ -524,6 +541,7 @@ echo'	<tr>
 	</tr>';
 	
 	}
+
 	?>
 	
 </table>
